@@ -1,18 +1,20 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
+    <div>{{test[0].id}}</div>
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script setup lang="ts">
+import { ref } from 'vue';
+import { DeviceTyp } from './interface'
 import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 
-export default defineComponent({
-  name: 'HomeView',
-  components: {
-    HelloWorld,
-  },
-});
+const test:DeviceTyp = ref([
+  {
+    id: 123,
+    name: '1234'
+  }
+])
 </script>
